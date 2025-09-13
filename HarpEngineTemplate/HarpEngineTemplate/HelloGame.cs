@@ -14,7 +14,7 @@ internal class HelloGame : Game
 		Instance = this;
 
 		Window.SetResizable(true);
-		Window.SetFullRenderer(Colors.DarkGray);
+		Window.SetRendererUnclipped(Colors.DarkGray);
 
 		activeScene = new MenuScene();
 	}
@@ -26,7 +26,6 @@ internal class HelloGame : Game
 
 	public override void Draw()
 	{
-		Drawing.Clear(Colors.Black);
 		activeScene.Draw();
 	}
 

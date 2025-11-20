@@ -6,6 +6,6 @@ internal class MenuScene : Scene
 {
 	public MenuScene()
 	{
-		new MenuManager(this);
+		AddEntity(new MenuManager());
 	}
 }

@@ -9,31 +9,29 @@ internal class Hello : Entity
 {
 	private Vector2 position;
 	private string text = "Hello!";
-	private Color[] colors = new[]
-	{
+	private Color[] colors =
+	[
 		Colors.Red,
 		Colors.Green,
 		Colors.Blue,
 		Colors.Yellow
-	};
+	];
 	private Color color;
 	private const int fontSize = 50;
 
-	public Hello(Scene scene) : base(scene)
+	public Hello()
 	{
-		Random random = new();
-
 		int halfWidth = Text.MeasureWidth(text, fontSize) / 2;
 		int halfHeight = fontSize / 2;
 		position = new(
-			random.NextFloat(halfWidth, Engine.GameWidth - halfWidth) - halfWidth,
-			random.NextFloat(halfHeight, Engine.GameHeight - halfHeight) - halfHeight
+			Generate.Float(halfWidth, Engine.GameWidth - halfWidth) - halfWidth,
+			Generate.Float(halfHeight, Engine.GameHeight - halfHeight) - halfHeight
 		);
 
-		color = colors[random.Next(colors.Length)];
+		color = colors[Generate.Integer(colors.Length)];
 	}
 
-	public override void Draw()
+	public override void OnDraw()
 	{
 		Text.Draw(text, position, fontSize, color);
 	}

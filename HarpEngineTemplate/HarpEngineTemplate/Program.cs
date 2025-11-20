@@ -2,14 +2,6 @@
 
 // Engine initialization lives here
 
-EngineSettings settings = new()
-{
-	WindowWidth = 800,
-	WindowHeight = 600,
-	WindowName = "Hello Game",
-	GameWidth = 800,
-	GameHeight = 600,
-};
-Engine.Initialize(settings);
+Engine.Initialize("Hello Game", 800, 600);
 HelloGame helloGame = new();
 Engine.Start(helloGame);

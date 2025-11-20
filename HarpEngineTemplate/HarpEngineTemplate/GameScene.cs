@@ -7,13 +7,13 @@ internal class GameScene : Scene
 {
 	public GameScene()
 	{
-		FireTimer fireTimer = new(this, 0.5f);
+		FireTimer fireTimer = AddEntity(new FireTimer(0.1f));
 		fireTimer.Fired += Hello;
 		fireTimer.Start();
 	}
 
 	public void Hello()
 	{
-		new Hello(this);
+		AddEntity(new Hello());
 	}
 }

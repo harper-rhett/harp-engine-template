@@ -15,16 +15,17 @@ internal class HelloGame : Game
 
 		Window.SetResizable(true);
 		Window.SetRendererUnclipped(Colors.DarkGray);
+		Window.Resize(800, 600);
 
 		activeScene = new MenuScene();
 	}
 
-	public override void Update(float frameTime)
+	public override void OnUpdate()
 	{
-		activeScene.Update(frameTime);
+		activeScene.Update();
 	}
 
-	public override void Draw()
+	public override void OnDraw()
 	{
 		activeScene.Draw();
 	}

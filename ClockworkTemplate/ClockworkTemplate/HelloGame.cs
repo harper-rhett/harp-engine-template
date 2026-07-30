@@ -30,6 +30,11 @@ internal class HelloGame : Game
 		activeScene.Draw();
 	}
 
+	public override void OnDrawGUI()
+	{
+		activeScene.DrawGUI();
+	}
+
 	public void Start()
 	{
 		activeScene = new GameScene();
